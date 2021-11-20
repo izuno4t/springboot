@@ -3,9 +3,9 @@ package com.example.demo
 import org.slf4j.LoggerFactory
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
+import org.springframework.http.server.ServletServerHttpRequest
 import org.springframework.util.StreamUtils
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.context.WebApplicationContext
@@ -16,15 +16,6 @@ import javax.servlet.http.HttpServletRequest
 @RestController
 @RequestMapping("/")
 class RootController {
-
-    @PostMapping("/json")
-    fun json(request: HttpServletRequest): ResponseEntity<String> {
-        val context = getWebApplicationContext(request.servletContext)
-        val jsonText = Thread.currentThread().contextClassLoader.getResourceAsStream("example.json")
-            .use { StreamUtils.copyToString(it, StandardCharsets.UTF_8) }
-        setJson(context, jsonText)
-        return ResponseEntity.ok(jsonText)
-    }
 
     @GetMapping(value = ["/**"], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun index(request: HttpServletRequest): ResponseEntity<String> {
@@ -39,6 +30,16 @@ class RootController {
         logger.info("response from resource file")
         setJson(context, jsonText)
         return ResponseEntity.ok(jsonText)
+    }
+
+    @GetMapping(value = ["/json"], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun json(request: HttpServletRequest): ResponseEntity<String> {
+        val context = getWebApplicationContext(request.servletContext)
+        ServletServerHttpRequest(request).body.use {
+            val jsonText = StreamUtils.copyToString(it, StandardCharsets.UTF_8)
+            setJson(context, jsonText)
+            return ResponseEntity.ok(jsonText)
+        }
     }
 
 

@@ -45,13 +45,13 @@ public class RootController {
     }
 
 
-    @PostMapping("/json")
-    public String json(HttpServletRequest request) throws IOException {
+    @PostMapping(value = "/json", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> json(HttpServletRequest request) throws IOException {
         var context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
         try (var is = new ServletServerHttpRequest(request).getBody()) {
             var jsonText = StreamUtils.copyToString(is, StandardCharsets.UTF_8);
             setJson(context, jsonText);
-            return jsonText;
+            return ResponseEntity.ok(jsonText);
         }
     }
 
