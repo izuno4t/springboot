@@ -48,7 +48,7 @@ class RootController {
     }
 
     private fun setJson(context: WebApplicationContext?, json: String?) {
-        json.let {
+        json?.let {
             context?.servletContext?.setAttribute("json", json)
         }
     }
