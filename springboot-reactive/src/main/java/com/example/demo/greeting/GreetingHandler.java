@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.greeting;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 import reactor.core.publisher.Mono;
 
-@Component
+//@Component
 public class GreetingHandler {
 
     public Mono<ServerResponse> hello(ServerRequest request) {

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.greeting;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,13 +10,13 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
-@Configuration(proxyBeanMethods = false)
+//@Configuration(proxyBeanMethods = false)
 public class GreetingRouter {
 
     @Bean
     public RouterFunction<ServerResponse> route(GreetingHandler greetingHandler) {
 
         return RouterFunctions
-                .route(GET("/hello").and(accept(MediaType.APPLICATION_JSON)), greetingHandler::hello);
+                .route(GET("/greeting").and(accept(MediaType.APPLICATION_JSON)), greetingHandler::hello);
     }
 }
