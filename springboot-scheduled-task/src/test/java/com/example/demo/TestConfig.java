@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan(basePackages = {"com.example"})
+@ComponentScan(basePackages = {"com.example.demo"})
 public class TestConfig {
 }
