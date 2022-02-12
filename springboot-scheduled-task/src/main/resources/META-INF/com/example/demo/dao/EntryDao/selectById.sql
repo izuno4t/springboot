@@ -1,0 +1,1 @@
+SELECT * FROM entry WHERE id = /* id */1

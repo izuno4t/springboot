@@ -19,5 +19,4 @@ public class ScheduledTasks {
         log.info("The time is now {}", LocalDateTime.now());
     }
 
-
 }
