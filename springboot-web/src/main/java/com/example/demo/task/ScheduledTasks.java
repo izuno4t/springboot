@@ -1,9 +1,11 @@
 package com.example.demo.task;
 
+import com.example.demo.context.CustomRequestAttributes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
 
 import java.time.LocalDateTime;
 
@@ -17,8 +19,7 @@ public class ScheduledTasks {
     @Scheduled(fixedRate = 5000)
     public void reportCurrentTime() {
         log.info("The time is now {}", LocalDateTime.now());
-
-
+        RequestAttributes attributes = new CustomRequestAttributes();
     }
 
 
