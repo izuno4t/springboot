@@ -8,7 +8,7 @@ SpringBootのあれやこれやを試すプロジェクト
 ## 環境
 
 - Java17
-- SpringBoot
+- SpringBoot2.7
 
 ## Refs
 
