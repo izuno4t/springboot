@@ -12,6 +12,7 @@ SpringBootのあれやこれやを試すプロジェクト
 
 ## Refs
 
+- [spring initializer](https://start.spring.io/)
 - [Spring Boot Maven プラグインのドキュメント](https://spring.pleiades.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/)
   - [6. OCI イメージのパッケージ化](https://spring.pleiades.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/#build-image)
 
@@ -20,5 +21,3 @@ SpringBootのあれやこれやを試すプロジェクト
 ```sh
 ./mvnw clean spring-boot:build-image
 ```
-
-
