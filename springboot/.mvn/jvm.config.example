@@ -1,0 +1,13 @@
+-Xmx2048m
+-Xms1024m
+-Djava.awt.headless=true
+-Dhttp.proxyHost=proxy.example.com
+-Dhttp.proxyPort=8080
+-Dhttp.proxyUser=
+-Dhttp.proxyPassword=
+-Dhttps.proxyHost=proxy.example.com
+-Dhttps.proxyPort=8080
+-Dhttps.proxyUser=
+-Dhttps.proxyPassword=
+-Djdk.http.auth.tunneling.disabledSchemes=
+
