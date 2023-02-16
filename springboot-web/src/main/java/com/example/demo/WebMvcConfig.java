@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.exec1.FooHandleIntercept;
+import com.example.demo.handlerinterceptor.FooHandleIntercept;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

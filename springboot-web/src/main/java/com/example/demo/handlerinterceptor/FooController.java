@@ -1,4 +1,4 @@
-package com.example.demo.exec1;
+package com.example.demo.handlerinterceptor;
 
 import com.example.demo.FooResolver;
 import com.example.demo.domain.FooId;
