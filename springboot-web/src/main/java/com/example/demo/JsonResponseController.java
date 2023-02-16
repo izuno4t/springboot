@@ -20,10 +20,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/")
-public class RootController {
+@RequestMapping("/json")
+public class JsonResponseController {
 
-    private static final Logger logger = LoggerFactory.getLogger(RootController.class);
+    private static final Logger logger = LoggerFactory.getLogger(JsonResponseController.class);
 
 
     @GetMapping(value = "/**", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -45,7 +45,7 @@ public class RootController {
     }
 
 
-    @PostMapping(value = "/json", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/put", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> json(HttpServletRequest request) throws IOException {
         var context = WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
         try (var is = new ServletServerHttpRequest(request).getBody()) {
