@@ -6,12 +6,12 @@ for project in $(ls -1); do
     test -f $project && continue;
     
     cd $project
-    echo "$project"
-    [[ -s .sdkrc ]] && sdk env 
-    test -e pom.xml && ./mvnw clean verify
-    test -e buil.gradle && ./gradlew clean check
+    echo "Build $project"
+    [[ -s .sdkmanrc ]] && sdk env 
+    test -e pom.xml && ./mvnw -q clean verify > /dev/null
+    test -e buil.gradle && ./gradlew -q clean check > /dev/null
     cd ..
-done;
+done
 
 
 
