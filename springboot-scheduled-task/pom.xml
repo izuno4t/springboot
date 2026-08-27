@@ -19,8 +19,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <doma.starter.version>1.8.0</doma.starter.version>
-        <doma.version>2.53.3</doma.version>
+        <doma.starter.version>1.7.0</doma.starter.version>
+        <doma.version>2.62.1</doma.version>
         <dependency.locations.enabled>false</dependency.locations.enabled>
         <dependency.details.enabled>false</dependency.details.enabled>
     </properties>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-            <version>4.4</version>
+            <version>4.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.seasar.doma.boot</groupId>
